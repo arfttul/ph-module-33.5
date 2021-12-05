@@ -29,8 +29,5 @@ body{
     transition: color ease-in-out;
 }
 #food-details{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 4;
-    background-color: rgb(237, 241, 193);
+    
 }

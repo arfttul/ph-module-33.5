@@ -9,22 +9,28 @@ const searchBtn = () => {
     foodInputTag.value = '';
 }
 
-const fetchUrl = foodName => {
+const fetchUrl = async foodName => {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName}`;
-    //console.log(url);
+    console.log(url);
     fetch(url)
         .then(response => response.json())
         .then(data => displayFood(data.meals))
+
+    // const response = await fetch(url);
+    // const data = await response.json();
+    // displayFood(data.meals);
 };
 
 const displayFood = showFood => {
     console.log('showfood', showFood);
     if (showFood == null) {
+        const foodCard = document.getElementById('food-card');
+        foodCard.innerHTML = ``;
         const searchSection = document.getElementById('search-section');
         const displaySection = document.getElementById('display-section');
         displaySection.textContent = ``;
         const warningParagraph = document.createElement('p');
-        warningParagraph.innerText = `Cannot search empty keyword!!`;
+        warningParagraph.innerText = `Please Enter a food name!!`;
         warningParagraph.style.color = 'red';
         warningParagraph.classList.add('text-center');
         searchSection.appendChild(warningParagraph);
@@ -35,8 +41,9 @@ const displayFood = showFood => {
     }
     else {
         const foodCard = document.getElementById('food-card');
-        foodCard.innerHTML = ``;
+        foodCard.textContent = ``;
         showFood.forEach(food => {
+            console.log('foodCard', foodCard);
             //console.log('food',food);
             const div = document.createElement('div');
             div.classList.add('col');
@@ -68,10 +75,11 @@ const readMore = showFood => {
         .then(data => {
             console.log('data', data.meals[0]);
             const foodDetails = document.getElementById('food-details');
+            foodDetails.innerHTML = ``;
             const div = document.createElement('div');
             foodDetails.style.margin = '10px';
             div.style.margin = '0 auto';
-            div.style.width = '22rem';
+            div.style.width = '50rem';
             div.classList.add('card');
             div.innerHTML = `
             <img src="${data.meals[0].strMealThumb}" class="card-img-top" alt="${data.meals[0].strMealThumb}">
