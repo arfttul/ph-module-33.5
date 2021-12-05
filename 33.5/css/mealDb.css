@@ -1,0 +1,36 @@
+
+body{
+    padding: 0 25px;
+}
+#display-section{
+    padding: 12px 0;
+}
+.display-food{
+    border: 2px solid rgb(44, 33, 23);
+    border-radius: 15px;
+    padding: 10px 30px;
+    margin: 10px 8px;
+    background-color: rgb(71, 70, 68);
+    color: beige;
+}
+.display-food:hover{
+    background-color: #0f4d92;
+    color: white;
+
+}
+.link-style{
+    
+    font-size: 19px;
+    color: rgb(240, 240, 240);
+}
+.link-style:hover{
+    font-size: 23px;
+    color: red;
+    transition: color ease-in-out;
+}
+#food-details{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 4;
+    background-color: rgb(237, 241, 193);
+}

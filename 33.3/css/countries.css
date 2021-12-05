@@ -1,0 +1,26 @@
+body{
+    background-color: #F0F8FF;
+}
+.section{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+}
+#show-country{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+/* .country-info{
+    border: 2px solid rgb(19, 139, 99);
+    border-radius: 10px;
+    margin: 5px 7px;
+    padding: 35px 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;;
+}
+.country-info:hover{
+    background-color: green;
+    color: white;
+    transition: ease-in-out 0.5s;
+} */
