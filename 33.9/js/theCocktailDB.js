@@ -37,6 +37,7 @@ const displayDrinks = drinksArr => {
     else {
         console.log('else');
         const drinkRow = document.getElementById('drink-row');
+        const displaySection = document.getElementById('')
         drinkRow.textContent = ``;
         drinksArr.forEach(drink => {
             const divCol = document.createElement('div');
@@ -55,14 +56,16 @@ const displayDrinks = drinksArr => {
             drinkRow.appendChild(divCol);
             divCol.addEventListener('click', function () {
                 readMore(drink, drinkRow);
+
             })
         });
     }
 }
 
 const readMore = (drink, showMore) => {
-    const drinkDetails = document.getElementById('drink-details');
     console.log(drink, showMore);
+    // showMore.textContent = ``;
+
     const divCol = document.createElement('div');
     drinkDetails.textContent = ``;
     divCol.classList.add('col');
@@ -82,5 +85,4 @@ const readMore = (drink, showMore) => {
     drinkDetails.textContent = ``;
     drinkDetails.appendChild(divCol);
     drinkDetails.appendChild(showMore);
-
 }
