@@ -54,8 +54,33 @@ const displayDrinks = drinksArr => {
             // console.log(drinkRow);
             drinkRow.appendChild(divCol);
             divCol.addEventListener('click', function () {
-                readMore();
+                readMore(drink, drinkRow);
             })
         });
     }
+}
+
+const readMore = (drink, showMore) => {
+    const drinkDetails = document.getElementById('drink-details');
+    console.log(drink, showMore);
+    const divCol = document.createElement('div');
+    drinkDetails.textContent = ``;
+    divCol.classList.add('col');
+    divCol.textContent = ``;
+    divCol.innerHTML = `
+            <div class="card">
+                <img src=" ${drink.strDrinkThumb}" class="card-img-top" alt="${drink.strDrinkThumb}">
+                <div class="card-body">
+                <h5 class="card-title">${drink.strDrink}</h5>
+                <p class="card-text">${drink.strInstructions}</p>
+            </div>
+      </div>
+        `;
+    // console.log(drinkRow);
+    divCol.style.width = '35rem';
+    divCol.style.margin = '10px auto';
+    drinkDetails.textContent = ``;
+    drinkDetails.appendChild(divCol);
+    drinkDetails.appendChild(showMore);
+
 }
