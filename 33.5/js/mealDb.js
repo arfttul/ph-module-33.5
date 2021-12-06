@@ -16,7 +16,7 @@ const fetchUrl = async foodName => {
         .then(response => response.json())
         .then(data => displayFood(data.meals))
 
-    // const response = await fetch(url);
+    // const response = asynch fetch(url);
     // const data = await response.json();
     // displayFood(data.meals);
 };
